@@ -25,5 +25,6 @@ for instr, count in instructions.items():
     print('\t\t{}\t: Executed {} times'.format(instr,count))
 
 print('\t You have {} functions'.format(len(functions)))
+
 for func, addr in functions.items():
     print('\t\t{}\t: Located at {} addr'.format(func,addr))
