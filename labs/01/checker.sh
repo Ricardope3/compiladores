@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 
 if [ -f "test.patch" ]
@@ -13,8 +13,8 @@ then
 
 fi
 
-make
-objdump -d ./simple_foo > log
+# make
+# objdump -d ./simple_foo > log
 if [ -f asm-analytics.sh ]
 then
     bash asm-analytics.sh log

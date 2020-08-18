@@ -1,13 +1,11 @@
 import re
 from os import system
-function = re.compile('0*([\d\w]*) _{1}([^_][\w]+)')
-instruction = re.compile('.*\t([\w]*)[\t\n]')
+function = re.compile('0*(.*) <([\w\d.@]*)>:')
+instruction = re.compile('.*\t([\w]*)')
 
-system('make')
-system('objdump -d simple_foo > .as')
 functions = {}
 instructions = {}
-with open(".as", "r") as a_file:
+with open("log", "r") as a_file:
     for line in a_file:
         res = function.match(line)
         if res:
