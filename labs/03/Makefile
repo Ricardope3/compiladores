@@ -5,3 +5,4 @@ all :
 	./lexical_scan example.ac
 clean:
 	rm lex.yy.c ./lexical_scan lex.out example.ac
+	

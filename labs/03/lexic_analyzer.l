@@ -3,7 +3,7 @@
 %}
 
 %%
-\/\/.*                  {}
+\/\/.*\n                {}
 (" ")+                  {fprintf(yyout, " ");}
 f                       {fprintf(yyout, "floatdcl");}
 i                       {fprintf(yyout, "intdcl");}
@@ -12,6 +12,8 @@ p                       {fprintf(yyout, "print");}
 [a-eg-hj-oq-z]          {fprintf(yyout, "id");}
 \+                      {fprintf(yyout, "plus");}
 -                       {fprintf(yyout, "minus");}
+\*                      {fprintf(yyout, "multiply");}
+\/                      {fprintf(yyout, "divide");}
 [0-9]+                  {fprintf(yyout, "inum");}
 [0-9]+.[0-9]+           {fprintf(yyout, "fnum");}
 <<EOF>>                 { return 0 ; }
@@ -24,4 +26,5 @@ int main(int argc, char *argv[])
     yyout = fopen("lex.out", "w"); 
     yylex(); 
     return 0; 
-} 
+}
+ 
