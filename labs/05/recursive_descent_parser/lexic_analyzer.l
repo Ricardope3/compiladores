@@ -6,7 +6,6 @@ extern int yylval;
 %}
 %%
 " "                 ;
-e                   {return(E);}
 i                   {return(I);}
 \+                  {return(PLUS);}
 [a-df-hj-z]*        {return(0);}

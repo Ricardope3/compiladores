@@ -3,7 +3,7 @@
 %}
 %start inicial
 %token I E PLUS
-%left '+'
+%left '\n'
 %%                  
 inicial:                       
         I segundo 
@@ -11,7 +11,7 @@ inicial:
 segundo:
         PLUS I segundo
         |
-        E {printf("Valido\n");}
+        PLUS I {printf("Valido\n");}
         ;
 %%
 main()
